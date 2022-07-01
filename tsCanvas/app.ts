@@ -1,4 +1,4 @@
-const canvas = document.getElementById("jsCanvas");
+const canvas = document.getElementById("jsCanvas") as HTMLCanvasElement;
 const ctx = canvas.getContext("2d"); 
 const colors = document.getElementsByClassName("jsColor");
 const range = document.getElementById("jsRange");
@@ -97,6 +97,6 @@ if (mode){
     mode.addEventListener("click", handleModeClick);
 }
 
-if (saveBtn){
+if(saveBtn){
     saveBtn.addEventListener("click", handleSaveClick);
-} 
+}
