@@ -46,7 +46,7 @@ function onMouseMove(event : MouseEvent){
   }
 }
 
-function handleColorClick(event : MouseEvent){
+function handleColorClick(event : Event){
   if (!ctx)
     return ;
   if (!event || !event.target)
