@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const TodoTemplateBlock = styled.div`
   width: 512px;
@@ -19,11 +20,15 @@ const TodoTemplateBlock = styled.div`
 `;
 
 function TodoTemplate({ children }) {
-  return(
+  return (
     <TodoTemplateBlock>
       {children}
     </TodoTemplateBlock>
   );
 }
+
+TodoTemplate.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default TodoTemplate;

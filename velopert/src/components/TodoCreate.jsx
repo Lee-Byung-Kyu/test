@@ -30,9 +30,9 @@ const CircleButton = styled.button`
 
 
   transition: 0.125s all ease-in;
-  ${props =>
-    props.open &&
-    css`
+  ${(props) =>
+    props.open
+    && css`
       background: #ff6b6b;
       &:hover {
         background: #ff8787;
@@ -81,16 +81,16 @@ function TodoCreate() {
   const nextId = useTodoNextId();
 
   const onToggle = () => setOpen(!open);
-  const onChange = e => setValue(e.target.value);
-  const onSubmit = e => {
+  const onChange = (e) => setValue(e.target.value);
+  const onSubmit = (e) => {
     e.preventDefault(); // 새로고침 방지
     dispatch({
       type: 'CREATE',
       todo: {
         id: nextId.current,
         text: value,
-        done: false
-      }
+        done: false,
+      },
     });
     setValue('');
     setOpen(false);
